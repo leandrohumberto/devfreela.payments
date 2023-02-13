@@ -4,9 +4,9 @@ namespace DevFreela.Payments.API.Services
 {
     public class PaymentService : IPaymentService
     {
-        public Task<bool> Process(PaymentInfoInputModel inputModel)
+        public Task<bool> Process(PaymentInfoInputModel inputModel, CancellationToken cancellationToken = default)
         {
-            return Task.FromResult(true);
+            return Task.Run(() => true, cancellationToken);
         }
     }
 }
